@@ -19,14 +19,14 @@ composer require :vendor_slug/:package_slug
 
 You can publish the config with:
 ```
-php artisan vendor:publish --tag=rapidez-:$packageSlugWithoutPrefix-config
+php artisan vendor:publish --tag=rapidez-:package_slug_without_prefix-config
 ```
 
 ## Views
 
 You can publish the views with:
 ```
-php artisan vendor:publish --tag=rapidez-:$packageSlugWithoutPrefix-views
+php artisan vendor:publish --tag=rapidez-:package_slug_without_prefix-views
 ```
 
 ## License
