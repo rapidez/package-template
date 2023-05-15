@@ -16,7 +16,8 @@ class SkeletonServiceProvider extends ServiceProvider
         $this
             ->bootRoutes()
             ->bootViews()
-            ->bootPublishables();
+            ->bootPublishables()
+            ->bootFilters();
     }
 
     public function bootRoutes() : self
@@ -45,5 +46,19 @@ class SkeletonServiceProvider extends ServiceProvider
         ], ':package_slug-config');
 
         return $this;
+    }
+
+    public function bootFilters() : self
+    {
+        Eventy::addFilter('index.product.data', function ($data) {
+            // Manipulate the data
+            return $data;
+        });
+
+        Eventy::addFilter('index.product.mapping', fn ($mapping) => array_merge_recursive($mapping ?: [], [
+            'properties' => [
+                // Additional mappings
+            ],
+        ]));
     }
 }

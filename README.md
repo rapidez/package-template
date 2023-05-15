@@ -8,6 +8,7 @@ This repository can be used as template for a new Rapidez package.
 
 Credits to [`spatie/package-skeleton-laravel`](https://github.com/spatie/package-skeleton-laravel) for the inpiration for this template
 <!--/delete-->
+:package_description
 
 ## Installation
 

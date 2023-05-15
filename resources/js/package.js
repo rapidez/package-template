@@ -8,4 +8,8 @@
 
 document.addEventListener('turbo:load', function () {
     // You can access the main Vue instance with "window.app"
+
+    // window.app.$on('event-name', () => {
+    //
+    // });
 })
