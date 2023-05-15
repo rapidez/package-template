@@ -16,8 +16,7 @@ class SkeletonServiceProvider extends ServiceProvider
         $this
             ->bootRoutes()
             ->bootViews()
-            ->bootPublishables()
-            ->bootComposers();
+            ->bootPublishables();
     }
 
     public function bootRoutes() : self
