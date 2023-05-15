@@ -39,11 +39,11 @@ class SkeletonServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez-:package_slug_without_prefix'),
-        ], ':package_slug-views');
+        ], 'rapidez-:package_slug_without_prefix-views');
 
         $this->publishes([
             __DIR__.'/../config/rapidez-:package_slug_without_prefix.php' => config_path('rapidez-:package_slug_without_prefix.php'),
-        ], ':package_slug-config');
+        ], 'rapidez-:package_slug_without_prefix-config');
 
         return $this;
     }

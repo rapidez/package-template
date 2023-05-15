@@ -161,6 +161,7 @@ $currentDirectory = getcwd();
 $folderName = basename($currentDirectory);
 
 $packageName = ask('Package name', $folderName);
+$packageNameWithoutPrefix = remove_prefix('Rapidez ', $packageName);
 $packageSlug = slugify($packageName);
 $packageSlugWithoutPrefix = remove_prefix('rapidez-', $packageSlug);
 
@@ -193,6 +194,7 @@ foreach ($files as $file) {
         ':vendor_name' => $vendorName,
         ':vendor_slug' => $vendorSlug,
         'VendorName' => $vendorNamespace,
+        ':package_name_without_prefix' => $packageNameWithoutPrefix
         ':package_name' => $packageName,
         ':package_slug_without_prefix' => $packageSlugWithoutPrefix,
         ':package_slug' => $packageSlug,
