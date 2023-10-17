@@ -194,7 +194,7 @@ foreach ($files as $file) {
         ':vendor_name' => $vendorName,
         ':vendor_slug' => $vendorSlug,
         'VendorName' => $vendorNamespace,
-        ':package_name_without_prefix' => $packageNameWithoutPrefix
+        ':package_name_without_prefix' => $packageNameWithoutPrefix,
         ':package_name' => $packageName,
         ':package_slug_without_prefix' => $packageSlugWithoutPrefix,
         ':package_slug' => $packageSlug,
