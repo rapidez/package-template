@@ -17,8 +17,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.0|^8.1",
-        "rapidez/core": "*"
+        "php": "^8.1|^8.2",
+        "rapidez/core": "^1.0"
     },
     "autoload": {
         "psr-4": {
