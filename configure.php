@@ -206,7 +206,7 @@ foreach ($files as $file) {
 
     match (true) {
         str_contains($file, determineSeparator('src/SkeletonServiceProvider.php')) => rename($file, determineSeparator('./src/'.$className.'ServiceProvider.php')),
-        str_contains($file, determineSeparator('config/skeleton.php')) => rename($file, determineSeparator('./config/rapidez-'.$packageSlugWithoutPrefix.'.php')),
+        str_contains($file, determineSeparator('config/rapidez/skeleton.php')) => rename($file, determineSeparator('./config/rapidez/'.$packageSlugWithoutPrefix.'.php')),
         str_contains($file, 'README.md') => remove_readme_paragraphs($file),
         default => [],
     };
