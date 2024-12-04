@@ -6,7 +6,7 @@
 // import example from './components/Example.vue'
 // Vue.component('example', example)
 
-document.addEventListener('turbo:load', function () {
+document.addEventListener('vue:loaded', function () {
     // You can access the main Vue instance with "window.app"
 
     // window.app.$on('event-name', () => {
