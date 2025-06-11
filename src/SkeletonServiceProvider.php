@@ -17,7 +17,15 @@ class SkeletonServiceProvider extends ServiceProvider
             ->bootRoutes()
             ->bootViews()
             ->bootPublishables()
+            ->bootTranslations()
             ->bootFilters();
+    }
+
+    public function bootTranslations(): self
+    {
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'rapidez-:package_slug_without_prefix');
+
+        return $this;
     }
 
     public function bootRoutes() : self
