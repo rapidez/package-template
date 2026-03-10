@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/rapidez/laravel-coding-standard/phpstan.neon
+    - ./vendor/rapidez/coding-standards/phpstan.neon
 
 parameters:
     level: 1

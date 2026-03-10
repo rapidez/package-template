@@ -40,6 +40,6 @@
     },
     "require-dev": {
         "larastan/larastan": "^3.9",
-        "rapidez/laravel-coding-standard": "^1.0"
+        "rapidez/coding-standards": "^1.0"
     }
 }
