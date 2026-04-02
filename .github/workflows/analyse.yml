@@ -4,35 +4,22 @@ on: ["push", "pull_request"]
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    uses: rapidez/workflows/.github/workflows/analyse.yml@master
     strategy:
       fail-fast: true
       matrix:
         os: [ubuntu-latest]
-        php: [8.3, 8.4, 8.5]
-        laravel: [12.*]
-        stability: [prefer-stable]
+        php: [8.4, 8.5]
+        laravel: [12.*, 13.*]
+        stability: [prefer-stable, prefer-lowest]
         include:
           - laravel: 12.*
             testbench: 10.*
-
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
-          coverage: none
-
-      - name: Install dependencies
-        run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
-
-      - name: Execute phpstan
-        run: php ./vendor/bin/phpstan --memory-limit=1G
+          - laravel: 13.*
+            testbench: 11.*
+    with:
+      os: ${{ matrix.os }}
+      php: ${{ matrix.php }}
+      laravel: ${{ matrix.laravel }}
+      testbench: ${{ matrix.testbench }}
+      stability: ${{ matrix.stability }}
