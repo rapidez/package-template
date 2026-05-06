@@ -1,7 +1,7 @@
 <script>
 export default {
     render() {
-        return this.$scopedSlots.default({
+        return this?.$slots?.default?.({
             someData: this.someData,
             someMethod: this.someMethod,
             someComputed: this.someComputed,
